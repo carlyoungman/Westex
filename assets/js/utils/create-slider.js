@@ -10,20 +10,23 @@ import Glide from '@glidejs/glide';
 export default function createSlide(selector, config) {
 	if (document.querySelector(selector) instanceof HTMLElement) {
 		const glide = new Glide(selector, config);
-		glide.mount();
+		setTimeout(function () {
+			glide.mount();
+		}, 1000);
+
 		// Triggers a window resize to insure the slider has to correct widths
 		setTimeout(() => {
 			const evt = window.document.createEvent('UIEvents');
 			evt.initUIEvent('resize', true, false, window, 0);
 			window.dispatchEvent(evt);
 		}, 1);
-		 window.addEventListener(
-		 	'resize',
-		 	function () {
-		 		glide.update();
+		window.addEventListener(
+			'resize',
+			function () {
+				glide.update();
 			},
-		 	true
-		 );
+			true
+		);
 		return glide;
 	}
 }

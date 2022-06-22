@@ -133,7 +133,7 @@ class Samples {
 		const inputs = form.querySelectorAll(
 			'div.input-wrapper input.wpcf7-validates-as-required'
 		);
-		const terms = form.querySelector('span.terms input');
+		const terms = form.querySelector('span.trigger input');
 		inputs.forEach((el) => {
 			el.addEventListener('mouseleave', function (e) {
 				e.preventDefault();
@@ -198,6 +198,7 @@ class Samples {
 								: element.value;
 						return json;
 					}, {});
+
 				fetch(formURL, {
 					method: 'POST',
 					credentials: 'same-origin',

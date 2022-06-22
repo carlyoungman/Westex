@@ -12,7 +12,7 @@ import clickModal from '../utils/click-modal';
 import getPreviousSibling from '../utils/get-previous-sibling';
 import updateSearchAppearance from '../utils/update-search-appearance';
 /**
- * Basic Organisations class
+ * Basic products class
  */
 class Products {
 	constructor(sector) {

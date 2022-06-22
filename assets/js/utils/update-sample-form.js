@@ -8,7 +8,13 @@ export default function updateSampleForm() {
 	const samples = document.querySelectorAll(
 		'div.sample-draw__display--main .sample-card'
 	);
-	const sams = ['sample-one', 'sample-two', 'sample-three'];
+	const sams = [
+		'sample-one',
+		'sample-two',
+		'sample-three',
+		'sample-four',
+		'same-five',
+	];
 	samples.forEach((element, i) => {
 		const input = document.createElement('input');
 		const title = element.querySelector('p.sample-card__title').textContent;

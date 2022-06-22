@@ -102,7 +102,7 @@ export default function buildModal({ postID, postSlug, postType, samples }) {
 		if (sampleArray.includes(String(postID)) === true) {
 			settings.button = true;
 		}
-		if (sampleArray.length >= 3) {
+		if (sampleArray.length >= 5) {
 			settings.buttons = true;
 		}
 	}

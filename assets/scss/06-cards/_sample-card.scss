@@ -7,6 +7,9 @@
 	padding: $global-spacing 0;
 	border-bottom: 1px solid $colour-alt-gray;
 	transition: $global-transition;
+	&:nth-of-type(5) {
+		border-bottom: none;
+	}
 	&__content-wrap {
 		@include flex-wrap;
 	}

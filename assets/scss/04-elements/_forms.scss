@@ -5,3 +5,7 @@
 	margin-top: calc(#{$global-spacing} * 3) !important;
 	text-align: center;
 }
+
+span.wpcf7-not-valid-tip {
+	display: none !important;
+}

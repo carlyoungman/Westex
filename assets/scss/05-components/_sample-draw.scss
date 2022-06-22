@@ -21,9 +21,12 @@
 		width: 60vw;
 	}
 	@include media-breakpoint-up(xl) {
-		width: 55vw;
+		width: 45vw;
 	}
 	@media (min-width: 1400px) {
+		width: 40vw;
+	}
+	@media (min-width: 1600px) {
 		width: 35vw;
 	}
 
@@ -35,7 +38,7 @@
 		max-height: calc(100vh - 60px);
 		overflow-y: auto;
 		@include media-breakpoint-up(md) {
-			padding: calc(#{$global-spacing} * 3);
+			padding: calc(#{$global-spacing} * 2);
 		}
 		@include media-breakpoint-up(xl) {
 			padding: calc(#{$global-spacing} * 3) calc(#{$global-spacing} * 4);

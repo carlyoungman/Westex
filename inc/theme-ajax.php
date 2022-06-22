@@ -161,7 +161,7 @@ function get_samples_ajax_handler() {
             'post_status'    => 'publish',
             'order'          => 'DESC',
             'post_type'      => ['carpet', 'lvtflooring'],
-            'posts_per_page' => 3,
+            'posts_per_page' => 5,
             'post__in' =>  explode(",", $_POST['samples'])
         ];
         $post = new \WP_Query( $args );
@@ -174,7 +174,7 @@ function get_samples_ajax_handler() {
             wp_reset_postdata();
         }
     }
-    while ($sample_count < 3 && $_POST['single'] !== 'true'){
+    while ($sample_count < 5 && $_POST['single'] !== 'true'){
         get_template_part( 'template_parts/cards/add-sample-card' );
         $sample_count++;
     }
