@@ -1,0 +1,21 @@
+ul.socials {
+	display: flex;
+	align-items: center;
+	margin: 2rem 0;
+	img {
+		width: 2.8rem;
+		height: 2.2rem;
+		object-fit: contain;
+	}
+	a {
+		display: inline-flex;
+		&:hover {
+			opacity: 0.75;
+		}
+	}
+	li {
+		margin-right: 2.5rem;
+		display: inline-flex;
+		align-items: center;
+	}
+}

@@ -1,0 +1,119 @@
+// Imports
+@import 'node_modules/css-reset-and-normalize/scss/reset-and-normalize.scss';
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+@import 'node_modules/bootstrap/scss/mixins/text-truncate';
+@import 'node_modules/bootstrap/scss/mixins/text-emphasis';
+@import 'node_modules/bootstrap/scss/mixins/hover';
+@import 'node_modules/bootstrap/scss/mixins/deprecate';
+@import 'node_modules/bootstrap/scss/mixins/text-hide';
+@import 'node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
+
+/*--------------------------------------------------------------
+# Settings - Variables used with preprocessors and contain font, colors definitions, etc
+--------------------------------------------------------------*/
+@import '01-settings/abstract';
+@import '01-settings/colors';
+@import '01-settings/measurements';
+@import '01-settings/icons';
+@import '01-settings/typography';
+
+/*--------------------------------------------------------------
+# Tools - Globally used mixins and functions. It’s important not to output any CSS in the first 2 layers
+--------------------------------------------------------------*/
+@import '02-tools/articles';
+@import '02-tools/breakpoints';
+@import '02-tools/buttons';
+@import '02-tools/cards';
+@import '02-tools/carousels';
+@import '02-tools/content';
+@import '02-tools/forms';
+@import '02-tools/grid';
+@import '02-tools/images';
+@import '02-tools/links';
+@import '02-tools/lists';
+@import '02-tools/modal';
+@import '02-tools/positioning';
+@import '02-tools/scroll-bar';
+@import '02-tools/slider';
+@import '02-tools/spacing';
+@import '02-tools/transforms';
+@import '02-tools/transition';
+@import '02-tools/typography';
+
+/*--------------------------------------------------------------
+# Generic - reset and/or normalize styles, box-sizing definition, etc. This is the first layer which generates actual CSS
+--------------------------------------------------------------*/
+@import '03-generic/backgrounds';
+@import '03-generic/box-sizing';
+@import '03-generic/normalize';
+@import '03-generic/helpers';
+
+/*--------------------------------------------------------------
+# Elements - styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we can redefine them here
+--------------------------------------------------------------*/
+@import '04-elements/address';
+@import '04-elements/body';
+@import '04-elements/buttons';
+@import '04-elements/footer';
+@import '04-elements/forms';
+@import '04-elements/header';
+@import '04-elements/headings';
+@import '04-elements/html';
+@import '04-elements/icons';
+@import '04-elements/links';
+@import '04-elements/lists';
+@import '04-elements/main';
+@import '04-elements/navs';
+@import '04-elements/sections';
+@import '04-elements/typography';
+/*--------------------------------------------------------------
+# Components – specific UI components. This is where the majority of our work takes place and our UI components are often composed of Objects and Components
+--------------------------------------------------------------*/
+@import '05-components/back-to-top';
+@import '05-components/browse-by-colour';
+@import '05-components/carousel';
+@import '05-components/checklist';
+@import '05-components/collections';
+@import '05-components/columns';
+@import '05-components/content-block';
+@import '05-components/content_with_form';
+@import '05-components/cookie-bar';
+@import '05-components/featured';
+@import '05-components/full';
+@import '05-components/hero';
+@import '05-components/image_with_content_grid';
+@import '05-components/inline';
+@import '05-components/inline-searchbar';
+@import '05-components/intro';
+@import '05-components/key_information_with_icons';
+@import '05-components/load-more-button';
+@import '05-components/mobile-navigation';
+@import '05-components/modal-base';
+@import '05-components/modal-sample';
+@import '05-components/offset-content-and-images';
+@import '05-components/product-filters';
+@import '05-components/products';
+@import '05-components/promos';
+@import '05-components/retailer-locations';
+@import '05-components/sample-draw';
+@import '05-components/section-break';
+@import '05-components/slideshow';
+@import '05-components/socials';
+@import '05-components/tabbed_content';
+@import '05-components/testimonials';
+/*--------------------------------------------------------------
+# Cards
+--------------------------------------------------------------*/
+@import '06-cards/add-sample-card';
+@import '06-cards/collection-card';
+@import '06-cards/colour-swatch-card';
+@import '06-cards/image-with-content-card';
+@import '06-cards/key_information_with_icons_card';
+@import '06-cards/product-card';
+@import '06-cards/retailer-card';
+@import '06-cards/sample-card';
+/*--------------------------------------------------------------
+# 07-pages
+--------------------------------------------------------------*/
+@import '07-pages/taxonomy';

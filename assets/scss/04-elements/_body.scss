@@ -1,0 +1,15 @@
+body {
+	@include base-settings;
+	@include scroll-bar-settings;
+	overflow-x: hidden;
+	background: $colour-white;
+	color: $colour-black;
+	&.search {
+		.inline-searchbar__headline {
+			@include headline-spacing;
+			@include media-breakpoint-up(lg) {
+				margin-top: calc(#{$global-spacing} * 6);
+			}
+		}
+	}
+}

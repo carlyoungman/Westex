@@ -1,0 +1,48 @@
+{
+    "key": "group_6201741f4773b",
+    "title": "Visualiser",
+    "fields": [
+        {
+            "key": "field_6201744a69805",
+            "label": "",
+            "name": "visualiser",
+            "type": "url",
+            "instructions": "Add a visualiser URL",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "carpet"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "lvtflooring"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1644262522
+}

@@ -1,0 +1,15 @@
+//Box shadow
+$box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+
+//Border radius
+$border-radius: 100px;
+
+// Easing
+$ease-default: cubic-bezier(0.59, 0.08, 0.385, 1);
+$ease-one: cubic-bezier(1, 0.01, 0.43, 0.95);
+$ease-two: cubic-bezier(0.4, -0.01, 0, 0.99);
+
+//Transitions
+$link-transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+$global-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+$slow-transition: all 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);

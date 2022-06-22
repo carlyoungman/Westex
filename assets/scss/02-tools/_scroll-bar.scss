@@ -1,0 +1,43 @@
+@mixin scroll-bar-settings {
+	&::-webkit-scrollbar {
+		width: 15px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $colour-dark-gray;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $colour-grey;
+		transition: $link-transition;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: darken($colour-grey, 10%);
+	}
+}
+
+@mixin sample-scroll-bar-settings {
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $colour-white;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $colour-alt-gray;
+		transition: $link-transition;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: darken($colour-alt-gray, 10%);
+	}
+}

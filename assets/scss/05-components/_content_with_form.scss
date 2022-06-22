@@ -1,0 +1,37 @@
+.content-with-form {
+	@include request_a_callback_form;
+	&__content-wrap {
+		max-width: $content-max-width;
+		.inline-link__icon-wrap {
+			margin-right: calc(#{$global-spacing});
+			margin-top: 3px;
+			fill: $colour-red;
+		}
+		a.inline-link {
+			margin-bottom: $global-spacing;
+			display: flex;
+			span {
+				width: 100%;
+				display: block;
+				&:first-of-type {
+					color: $colour-black;
+				}
+				&:last-of-type {
+					color: $colour-red;
+					text-decoration: underline;
+					&:hover {
+						color: $colour-black;
+					}
+				}
+			}
+		}
+	}
+	&__headline {
+		margin-top: 0;
+	}
+	&__supporting_content {
+		@include paragraph-large;
+		@include headline-spacing;
+		color: $colour-dark-gray;
+	}
+}

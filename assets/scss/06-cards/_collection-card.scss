@@ -1,0 +1,25 @@
+.collection-card {
+	color: inherit;
+	text-decoration: none;
+	overflow: hidden;
+	display: block;
+	&__image-wrap {
+		overflow: hidden;
+	}
+	&__image {
+		object-fit: cover;
+		min-width: 100%;
+		transition: $global-transition;
+	}
+	&:hover {
+		.collection-card__image {
+			@include scale(1.1);
+		}
+	}
+	&__title {
+		@include headline-line-after;
+	}
+	&__description {
+		margin-bottom: 0;
+	}
+}

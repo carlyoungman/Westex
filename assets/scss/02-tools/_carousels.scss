@@ -1,0 +1,16 @@
+@use '../01-settings/abstract' as abstract;
+@use '../01-settings/measurements' as measurement;
+@use '../02-tools/breakpoints' as breakpoint;
+
+@mixin carousel-settings {
+	&__carousel {
+		position: relative;
+		z-index: 1;
+	}
+	&__track {
+		overflow: hidden;
+	}
+	&__carousel-slides {
+		display: flex;
+	}
+}

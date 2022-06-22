@@ -1,0 +1,95 @@
+{
+  "name": "elementary",
+  "version": "0.0.1",
+  "description": "elementary digital boilerplate theme",
+  "license": "MIT",
+  "author": "jj@elementarydigital.co.uk",
+  "homepage": "https://elementarydigital.co.uk",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/elementarydigital/theme-boilerplate/"
+  },
+  "testing": {
+    "urls": {}
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
+    "@types/google.maps": "^3.47.3",
+    "@wordpress/babel-preset-default": "^6.0.0",
+    "@wordpress/blocks": "11.0.1",
+    "@wordpress/eslint-plugin": "9.1.1",
+    "@wordpress/prettier-config": "^1.0.5",
+    "comment-parser": "1.2.4",
+    "eslint": "7.32.0",
+    "eslint-plugin-jsdoc": "36.0.8",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "3.4.1",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-webpack-plugin": "3.0.1",
+    "fs": "^0.0.1-security",
+    "husky": "7.0.2",
+    "jquery-validation": "^1.19.3",
+    "laravel-mix": "^6.0.19",
+    "lint-staged": "11.1.2",
+    "normalize.css": "^8.0.1",
+    "postcss": "^8.3.2",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.3.1",
+    "resolve-url-loader": "4.0.0",
+    "sass": "^1.32.13",
+    "sass-loader": "12.1.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-wordpress": "^17.0.0",
+    "stylelint-declaration-use-variable": "^1.7.0",
+    "stylelint-order": "^4.0.0"
+  },
+  "scripts": {
+    "build": "npx mix --production",
+    "dev": "npx mix && npm run lint",
+    "watch": "npx mix watch",
+    "lint:css": "stylelint assets/scss/**/**.scss",
+    "lint:js": "eslint assets/js/**/**.js",
+    "lint:php": "composer run lint",
+    "format:js": "eslint --fix assets/js/**/**.js",
+    "lint": "npm run lint:css && npm run lint:js && npm run lint:php",
+    "format": "npm run format-js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "prettier": "@wordpress/prettier-config",
+  "lint-staged": {
+    "*.scss": [
+      "stylelint"
+    ],
+    "*.js": [
+      "eslint"
+    ],
+    "*.php": [
+      "./vendor/bin/phpcs --extensions=php --warning-severity=8 -s"
+    ]
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.5.2",
+    "@googlemaps/markerclusterer": "^1.0.21",
+    "bootstrap": "^4.0.0",
+    "css-reset-and-normalize": "^2.3.5",
+    "flickity": "^2.2.2",
+    "flickity-fade": "^1.0.0",
+    "google-maps": "^4.3.3",
+    "gsap": "^3.8.0",
+    "hamburgers": "^1.1.3",
+    "handlebar": "^1.0.0",
+    "handlebars": "^4.7.7",
+    "handlebars-webpack-plugin": "^2.2.1",
+    "isotope-layout": "^3.0.6",
+    "smoothscroll-polyfill": "^0.4.4"
+  }
+}

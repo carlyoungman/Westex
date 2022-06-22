@@ -1,0 +1,16 @@
+@mixin card-animation {
+	&--dynamic {
+		opacity: 0;
+		transform: translate3D(0, 25%, 0);
+		&:hover {
+			transform: inherit;
+		}
+	}
+	&--fade-out {
+		opacity: 0;
+		transform: translate3D(0, 25%, 0);
+		&:hover {
+			transform: inherit;
+		}
+	}
+}

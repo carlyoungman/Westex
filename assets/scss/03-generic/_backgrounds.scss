@@ -1,0 +1,9 @@
+.has-background {
+	@include block-spacing-padding;
+	&.background--white {
+		background-color: $colour-white;
+	}
+	&.background--gray {
+		background-color: $colour-grey;
+	}
+}

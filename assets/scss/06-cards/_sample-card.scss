@@ -1,0 +1,39 @@
+.sample-card {
+	@include link-reset;
+	@include image-hover-effect;
+	@include grid-settings;
+	align-items: center;
+	grid-template-columns: 100px 1fr 100px;
+	padding: $global-spacing 0;
+	border-bottom: 1px solid $colour-alt-gray;
+	transition: $global-transition;
+	&__content-wrap {
+		@include flex-wrap;
+	}
+	&__title {
+		@include headline-h6;
+		width: 100%;
+		margin: 0;
+	}
+	&__collection {
+		margin: 0;
+	}
+	&__close {
+		@include small-text;
+		justify-content: flex-end;
+		color: $colour-red;
+		&:hover {
+			color: $colour-black;
+			.icon {
+				fill: $colour-black;
+			}
+		}
+	}
+	&__icon {
+		margin-right: calc(#{$global-spacing} / 2);
+		fill: $colour-red;
+	}
+	&--fade-out {
+		opacity: 0;
+	}
+}

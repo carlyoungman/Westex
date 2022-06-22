@@ -1,0 +1,28 @@
+.key-information-with-icons {
+	&.has-background {
+		h1.key-information-with-icons__archive-title {
+			display: block;
+			@include media-breakpoint-up(lg) {
+				@include headline-super-size;
+				margin: calc(#{$global-spacing} * 4) 0
+					calc(#{$global-spacing} * 4);
+			}
+		}
+	}
+	&__archive-title {
+		display: none;
+	}
+	.container-fluid--content {
+		margin-bottom: calc(#{$global-spacing} * 4);
+	}
+	.container-fluid--key-information {
+		padding: 0;
+		.row {
+			margin: 0 - calc($global-spacing * 2);
+		}
+	}
+	&__subheadling {
+		color: $colour-red;
+		margin-top: 0;
+	}
+}

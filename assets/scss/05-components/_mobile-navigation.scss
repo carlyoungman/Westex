@@ -1,0 +1,33 @@
+.mobile-navigation {
+	height: calc(100vh);
+	top: 0;
+	padding-top: 81px;
+	width: 100%;
+	position: fixed;
+	transition: $global-transition;
+	transform: translate3d(100%, 0, 0);
+	background: $colour-grey;
+	color: $colour-black;
+	z-index: 10;
+	&--active {
+		transform: translate3d(0, 0, 0);
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+	.menu-main-navigation-container {
+		height: 100%;
+		padding: calc(#{$global-spacing} * 2) calc(#{$global-spacing} * 2)
+			calc(#{$global-spacing} * 4) calc(#{$global-spacing} * 2);
+	}
+	.menu {
+		@include flex-wrap();
+	}
+	li.menu-item {
+		@include headline-settings;
+		width: 100%;
+		margin: $global-spacing 0;
+		padding-bottom: $global-spacing;
+		border-bottom: 1px solid $colour-alt-gray;
+	}
+}

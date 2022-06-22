@@ -1,0 +1,28 @@
+.add-sample-card {
+	@include grid-settings;
+	grid-template-columns: 100px 1fr;
+	align-items: center;
+	padding: $global-spacing 0;
+	border-bottom: 1px solid $colour-alt-gray;
+	transition: $link-transition;
+	color: inherit;
+	&__image-wrap {
+		@include flex-full;
+		height: 100px;
+		width: 100px;
+		background: $colour-white;
+	}
+	&__icon {
+		fill: $colour-alt-gray;
+	}
+
+	&--fade-out {
+		opacity: 0;
+	}
+	&:nth-of-type(3) {
+		border-bottom: none;
+	}
+	&:hover {
+		color: $colour-red;
+	}
+}

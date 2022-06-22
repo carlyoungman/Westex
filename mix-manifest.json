@@ -1,0 +1,20 @@
+{
+    "/dist/assets/js/main.js": "/dist/assets/js/main.js",
+    "/dist/assets/css/main.css": "/dist/assets/css/main.css",
+    "/dist/assets/fonts/StagSans-Book.woff": "/dist/assets/fonts/StagSans-Book.woff",
+    "/dist/assets/fonts/StagSans-Book.woff2": "/dist/assets/fonts/StagSans-Book.woff2",
+    "/dist/assets/fonts/StagSans-Light.woff": "/dist/assets/fonts/StagSans-Light.woff",
+    "/dist/assets/fonts/StagSans-Light.woff2": "/dist/assets/fonts/StagSans-Light.woff2",
+    "/dist/assets/fonts/StagSans-Medium.woff": "/dist/assets/fonts/StagSans-Medium.woff",
+    "/dist/assets/fonts/StagSans-Medium.woff2": "/dist/assets/fonts/StagSans-Medium.woff2",
+    "/dist/assets/favicons/android-chrome-192x192.png": "/dist/assets/favicons/android-chrome-192x192.png",
+    "/dist/assets/favicons/android-chrome-256x256.png": "/dist/assets/favicons/android-chrome-256x256.png",
+    "/dist/assets/favicons/apple-touch-icon.png": "/dist/assets/favicons/apple-touch-icon.png",
+    "/dist/assets/favicons/browserconfig.xml": "/dist/assets/favicons/browserconfig.xml",
+    "/dist/assets/favicons/favicon-16x16.png": "/dist/assets/favicons/favicon-16x16.png",
+    "/dist/assets/favicons/favicon-32x32.png": "/dist/assets/favicons/favicon-32x32.png",
+    "/dist/assets/favicons/favicon.ico": "/dist/assets/favicons/favicon.ico",
+    "/dist/assets/favicons/mstile-150x150.png": "/dist/assets/favicons/mstile-150x150.png",
+    "/dist/assets/favicons/safari-pinned-tab.svg": "/dist/assets/favicons/safari-pinned-tab.svg",
+    "/dist/assets/favicons/site.webmanifest": "/dist/assets/favicons/site.webmanifest"
+}

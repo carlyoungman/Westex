@@ -1,0 +1,101 @@
+// All colors are now available as a class. e.g class="font-seance"
+@each $fontcolor, $value in $colors {
+	.font--#{$fontcolor} {
+		color: $value;
+	}
+}
+
+// Fontsize multiple and line height
+@mixin font-size($font-size-multiplier, $line-height-multiplier) {
+	font-size: ($font__base-size * $font-size-multiplier);
+	line-height: (
+		$font__base-size * $font-size-multiplier * $line-height-multiplier
+	);
+}
+
+@mixin just-font-size($font-size-multiplier) {
+	font-size: ($font__base-size * $font-size-multiplier);
+}
+
+@mixin headline-settings {
+	font-family: $font__headline;
+	font-weight: $font__headline-font-weight;
+	clear: both;
+}
+
+@mixin base-settings {
+	font-family: $font__main;
+	font-size: $font__base-size;
+	font-weight: $font__base-font-weight;
+	line-height: $font__base-line-height;
+}
+
+@mixin headline-super-size {
+	@include font-size(4.5, 1.1);
+	@include media-breakpoint-up(lg) {
+		@include font-size(5, 1.1);
+	}
+}
+
+@mixin headline-h1 {
+	@include font-size(3, 1.3);
+	@include media-breakpoint-up(lg) {
+		@include font-size(3.5, 1.3);
+	}
+}
+
+@mixin headline-h2 {
+	@include font-size(2.5, 1.3);
+	@include media-breakpoint-up(lg) {
+		@include font-size(3, 1.3);
+	}
+}
+
+@mixin headline-h3 {
+	@include font-size(2, 1.3);
+	@include media-breakpoint-up(lg) {
+		@include font-size(2.5, 1.3);
+	}
+}
+
+@mixin headline-h4 {
+	@include font-size(1.75, 1.3);
+	@include media-breakpoint-up(lg) {
+		@include font-size(2, 1.3);
+	}
+}
+
+@mixin headline-h5 {
+	@include font-size(1.5, 1.3);
+}
+
+@mixin headline-h6 {
+	@include font-size(1.2, 1.3);
+}
+
+@mixin paragraph-settings {
+	@include base-settings;
+}
+@mixin paragraph-large {
+	@include just-font-size(1.2);
+}
+@mixin small-text {
+	@include just-font-size(0.8);
+}
+
+@mixin headline-line-after {
+	&:after {
+		@include headline-spacing;
+		content: '';
+		display: block;
+		height: 1px;
+		background-color: $colour-alt-gray;
+		width: 20vw;
+		@include media-breakpoint-up(md) {
+			width: 15vw;
+		}
+		@include media-breakpoint-up(lg) {
+			width: 5vw;
+		}
+	}
+}

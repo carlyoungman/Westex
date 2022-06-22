@@ -1,0 +1,7 @@
+$icon-size: (
+	xs: calc(#{$global-spacing} / 2),
+	s: calc(#{$global-spacing}),
+	m: calc(#{$global-spacing} * 3 / 2),
+	l: calc(#{$global-spacing * 3}),
+	xl: calc(#{$global-spacing * 4}),
+);

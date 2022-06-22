@@ -1,0 +1,51 @@
+.featured {
+	overflow: hidden;
+	&__headline {
+		margin-top: 0;
+	}
+	.content__wrap {
+		max-width: 82rem;
+	}
+	&__carousel {
+		@include block-spacing-margin;
+
+		margin-bottom: 0 !important;
+		position: relative;
+		&:after {
+			@include full-size-after;
+			background-color: $colour-white;
+			left: -100%;
+		}
+	}
+	&__carousel-slides {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__controls {
+		button {
+			@include headline-h5;
+			@include flex-full;
+			color: $colour-white;
+			position: absolute;
+			z-index: 1;
+			background: $colour-black;
+			border-radius: 100%;
+			height: 60px;
+			width: 60px;
+			box-shadow: $box-shadow;
+			top: 300px;
+			@include media-breakpoint-up(lg) {
+				top: 225px;
+			}
+			&#prev {
+				left: $global-spacing;
+			}
+			&#next {
+				right: $global-spacing;
+			}
+			&:hover {
+				background: $colour-dark-gray;
+			}
+		}
+	}
+}

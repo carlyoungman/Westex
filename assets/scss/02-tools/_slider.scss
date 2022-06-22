@@ -1,0 +1,8 @@
+@keyframes slideshowDot {
+	0% {
+		transform: scaleX(0) translateZ(0);
+	}
+	100% {
+		transform: scaleX(1) translateZ(0);
+	}
+}

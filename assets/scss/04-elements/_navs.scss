@@ -1,0 +1,21 @@
+nav {
+	&#header {
+		display: inline-flex;
+		margin-right: 0;
+		margin-left: auto;
+		ul li {
+			display: inline-flex;
+			margin-left: calc(#{$global-spacing} * 2);
+			&.current-menu-item a {
+				&:after {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		}
+		a {
+			color: $colour-white;
+			@include line-effect;
+		}
+	}
+}

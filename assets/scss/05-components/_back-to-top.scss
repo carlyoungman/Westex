@@ -1,0 +1,28 @@
+.back-to-top {
+	@include flex-full;
+	background: $colour-dark-gray;
+	position: fixed;
+	bottom: $global-spacing;
+	right: $global-spacing;
+	padding: $global-spacing;
+	border-radius: $global-spacing;
+	transform: translate3d(0, 150%, 0);
+	transition: $global-transition;
+	&__icon {
+		transform: rotate(-180deg);
+		fill: $colour-alt-gray;
+	}
+	@media print {
+		display: none;
+	}
+	&:hover {
+		cursor: pointer;
+		background: $colour-red;
+	}
+}
+
+.header--active {
+	.back-to-top {
+		transform: translate3d(0, 0, 0);
+	}
+}

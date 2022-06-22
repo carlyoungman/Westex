@@ -1,0 +1,188 @@
+.retailer-card {
+	padding: calc(#{$global-spacing} * 2) $global-spacing;
+	position: relative;
+	@include media-breakpoint-up(lg) {
+		padding: calc(#{$global-spacing} * 2) 0;
+	}
+	&:after {
+		content: '';
+		width: 200%;
+		height: 100%;
+		left: -50%;
+		top: 0;
+		position: absolute;
+		border-bottom: 1px solid $colour-alt-gray;
+		z-index: -1;
+	}
+
+	//&:hover {
+	//	cursor: pointer;
+	//	&:after {
+	//		background: $colour-grey;
+	//	}
+	//}
+	&--selected {
+		cursor: pointer;
+		&:after {
+			background: $colour-grey;
+		}
+	}
+
+	&__grid {
+		@include grid-settings;
+		align-items: flex-start;
+		grid-template-columns: 1fr;
+		width: 100%;
+	}
+	&__name {
+		color: $colour-black;
+		font-family: $font-stagsans-book;
+		margin: 0 0 calc(#{$global-spacing}) 0;
+	}
+	&__address {
+		color: $colour-dark-gray;
+		margin: 0 0 calc(#{$global-spacing}) 0;
+	}
+	&__header {
+		@include flex-wrap;
+		max-width: $address-max-width;
+		justify-content: space-between;
+	}
+	&__distance {
+		font-family: $font-stagsans-book;
+		color: $colour-red;
+	}
+	&__count {
+		@include flex-full;
+		margin-top: calc(#{$global-spacing} * 2);
+		font-weight: 700;
+		border-radius: 100%;
+		color: $colour-white;
+		position: relative;
+		&:after {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			top: -20px;
+			content: '';
+			z-index: 0;
+			background-color: #000;
+		}
+	}
+	&__icon {
+		position: absolute;
+	}
+	&__count-span {
+		@include small-text;
+		position: absolute;
+		background: #000;
+		margin-top: -10px;
+		z-index: 1;
+	}
+	&__products {
+		@include grid-retailer-products;
+		margin: 0 0 calc(#{$global-spacing} * 2) 0;
+	}
+	&__product {
+		@include flex-wrap;
+		@include headline-settings;
+		margin-right: calc(#{$global-spacing * 2});
+	}
+	&__product-icon {
+		fill: $colour-red;
+		margin-right: $global-spacing;
+	}
+	&__directions-link,
+	&__number {
+		@include button-arrow;
+	}
+	&__additional {
+		@include flex-wrap;
+	}
+	&__additional-item {
+		margin-right: calc(#{$global-spacing * 2});
+	}
+	&--selected {
+		background: $colour-grey;
+		order: 1;
+	}
+	display: none;
+	@for $i from 1 through 25 {
+		&:nth-of-type(#{$i}) {
+			display: block;
+		}
+	}
+}
+
+#wpsl-stores {
+	ul.retailer-locations__results {
+		> li {
+			@extend .retailer-card;
+			.wpsl-store-location {
+				> p {
+					display: flex;
+					flex-wrap: wrap;
+					margin: 0 0 calc(#{$global-spacing}) 0;
+					max-width: $address-max-width;
+				}
+				h6 {
+					@extend .retailer-card__name;
+					display: block;
+					width: 100%;
+				}
+				address {
+					@extend .retailer-card__address;
+					margin-bottom: $global-spacing;
+				}
+				span {
+					display: block;
+					margin-right: 10px;
+					color: $colour-dark-gray;
+				}
+			}
+			.wpsl-contact-details {
+				display: flex;
+				flex-wrap: wrap;
+				width: 100%;
+				p {
+					margin: 0 $global-spacing 0 0;
+					strong {
+						margin-right: calc(#{$global-spacing / 2});
+					}
+					&:last-of-type {
+						margin: 0;
+					}
+				}
+				a {
+					&:hover {
+						cursor: pointer;
+						color: $colour-dark-gray;
+					}
+				}
+			}
+
+			h6.distance {
+				position: absolute;
+				top: calc(#{$global-spacing});
+				right: 0;
+			}
+			.wpsl-directions {
+				@include button-arrow;
+			}
+			.terms {
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: calc(#{$global-spacing});
+				p {
+					margin: 0;
+					max-width: 80%;
+				}
+				.icon {
+					fill: $colour-red;
+					margin-right: calc(#{$global-spacing / 2});
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+}

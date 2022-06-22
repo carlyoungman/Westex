@@ -1,0 +1,14 @@
+.icon {
+	@each $name, $value in $icon-size {
+		&.icon--#{$name} {
+			width: $value;
+			height: $value;
+		}
+	}
+
+	@each $iconColors, $value in $colors {
+		&.icon--#{$iconColors} {
+			fill: $value;
+		}
+	}
+}

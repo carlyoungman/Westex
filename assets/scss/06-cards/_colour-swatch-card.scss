@@ -1,0 +1,21 @@
+.colour-swatch-card {
+	color: inherit;
+	text-decoration: none;
+	max-width: 100px;
+	&__image {
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+	}
+	&__title {
+		margin-top: calc(#{$global-spacing} / 3);
+		@include line-effect;
+	}
+	&:hover {
+		.colour-swatch-card__title:after {
+			transform: translateY(0);
+			background: $colour-black;
+			opacity: 1;
+		}
+	}
+}

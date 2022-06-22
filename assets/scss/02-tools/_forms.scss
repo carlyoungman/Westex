@@ -1,0 +1,144 @@
+@mixin samples_form {
+	form {
+		.wpcf7-form-control-wrap {
+			position: unset;
+		}
+
+		.input-wrapper {
+			@include flex-wrap;
+			position: relative;
+			border-bottom: 1px solid $colour-dark-gray;
+			margin-top: calc(#{$global-spacing});
+			height: 60px;
+			@media (min-width: 1400px) {
+				margin-top: calc(#{$global-spacing * 2});
+			}
+			label {
+				color: $colour-dark-gray;
+				position: absolute;
+				transition: $link-transition;
+			}
+			input {
+				@include full-size-element;
+				border: 0;
+				outline: 0;
+				background: none;
+				color: $colour-black;
+			}
+			&--has-input {
+				label {
+					@include small-text;
+					color: $colour-red;
+					transform: translate3d(0, -30px, 0);
+					@media (min-width: 1400px) {
+						transform: translate3d(0, -35px, 0);
+					}
+				}
+			}
+		}
+		span.subscribe {
+			margin-top: calc(#{$global-spacing} * 2);
+			display: block;
+		}
+		.wpcf7-acceptance {
+			@include small-text;
+			margin-top: $global-spacing;
+			margin-left: $global-spacing;
+			display: block;
+			span {
+				margin: 0;
+			}
+			input[type='checkbox'] {
+				@include scale(1.5);
+				border-radius: 0;
+				margin-right: calc(#{$global-spacing} / 2);
+				border: 1px solid $colour-dark-gray;
+			}
+		}
+	}
+}
+
+@mixin request_a_callback_form() {
+	form {
+		.wpcf7-form-control-wrap {
+			position: unset;
+		}
+		span.wpcf7-not-valid-tip {
+			display: none !important;
+		}
+		.input-wrapper {
+			display: flex;
+			align-items: center;
+			position: relative;
+			height: 60px;
+			background: $colour-grey;
+			margin-bottom: calc(#{$global-spacing});
+			overflow: hidden;
+			&--has-input {
+				label {
+					transform: translate3d(0, -100%, 0);
+				}
+			}
+			&--text-wrapper {
+				min-height: 140px;
+				align-items: flex-start;
+			}
+		}
+		.button-wrapper {
+			@include paragraph-large;
+			@include flex-center;
+			justify-content: flex-end;
+			position: relative;
+			height: 60px;
+			&:hover {
+				cursor: pointer;
+				.button-icon {
+					right: 0;
+					fill: $colour-black;
+				}
+				.wpcf7-submit {
+					color: $colour-black;
+				}
+			}
+		}
+		.button-icon {
+			@include rotate(-90deg);
+			position: absolute;
+			right: $global-spacing;
+			fill: $colour-red;
+			transition: $link-transition;
+		}
+		.wpcf7-spinner {
+			position: absolute;
+		}
+		label {
+			color: $colour-dark-gray;
+			position: absolute;
+			padding: $global-spacing;
+			transition: $global-transition;
+		}
+
+		input,
+		textarea {
+			@include full-size-element;
+			padding: $global-spacing;
+			border: 0;
+			outline: 0;
+			background: none;
+			color: $colour-black;
+			&.wpcf7-not-valid {
+				border-bottom: 2px solid $colour-red;
+			}
+			&.wpcf7-submit {
+				position: relative;
+				width: auto;
+				height: auto;
+				color: $colour-red;
+				padding-right: calc(#{$global-spacing} * 6);
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}

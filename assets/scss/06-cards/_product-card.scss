@@ -1,0 +1,24 @@
+.product-card {
+	@include link-reset;
+	@include card-animation;
+	@include image-hover-effect;
+	transition: $link-transition;
+	&__title {
+		margin-bottom: 0;
+		color: $colour-black;
+		margin-top: calc(#{$global-spacing});
+		line-height: 1rem;
+	}
+	&__collection {
+		color: $colour-dark-gray;
+		margin: 0;
+		pointer-events: none;
+		&:hover {
+			color: $colour-red;
+		}
+	}
+	&--count {
+		position: absolute;
+		pointer-events: none;
+	}
+}

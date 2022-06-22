@@ -1,0 +1,65 @@
+@mixin grid-settings {
+	display: grid;
+	row-gap: ($global-spacing * 2);
+	column-gap: ($global-spacing * 2);
+	@include media-breakpoint-up(lg) {
+		row-gap: ($global-spacing * 3);
+		column-gap: ($global-spacing * 3);
+	}
+}
+
+@mixin grid-products {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	@include media-breakpoint-up(md) {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+	@include media-breakpoint-up(xl) {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+@mixin grid-collections {
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	@include media-breakpoint-up(md) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	@include media-breakpoint-up(xl) {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+@mixin grid-samples {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	@include media-breakpoint-up(sm) {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+	@include media-breakpoint-up(md) {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: repeat(8, minmax(0, 1fr));
+	}
+	@include media-breakpoint-up(xl) {
+		grid-template-columns: repeat(10, minmax(0, 1fr));
+	}
+}
+
+@mixin grid-image-with-content {
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	@include media-breakpoint-up(md) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@mixin grid-retailer-products {
+	display: grid;
+	row-gap: $global-spacing;
+	column-gap: $global-spacing;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	@include media-breakpoint-up(md) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}

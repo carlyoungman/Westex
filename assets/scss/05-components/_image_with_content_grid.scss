@@ -1,0 +1,6 @@
+.image_with_content_grid {
+	&__grid {
+		@include grid-settings;
+		@include grid-image-with-content;
+	}
+}

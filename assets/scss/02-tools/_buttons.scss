@@ -1,0 +1,154 @@
+@mixin button-settings {
+	display: inline-flex;
+	position: relative;
+	align-items: center;
+	outline: 0;
+	border: 0;
+	appearance: none;
+	background: none;
+	&:hover {
+		cursor: pointer;
+	}
+	&:focus {
+		outline: 0;
+	}
+	&:active {
+		outline: 0;
+		border: 0;
+	}
+}
+@mixin button-default {
+	@include headline-h6;
+	padding: calc(#{$global-spacing} * 2);
+	background: $colour-white;
+	color: $colour-red;
+	&:hover,
+	&:focus {
+		background-color: $colour-red;
+		color: $colour-white;
+	}
+}
+
+@mixin button-action {
+	@include headline-h6;
+	@include flex-full;
+	background: $colour-red;
+	color: $colour-white;
+	padding: $global-spacing;
+	&:hover,
+	&:focus {
+		background-color: darken($colour-red, 10%);
+	}
+}
+
+@mixin button-close {
+	@include headline-h6;
+	@include flex-full;
+	background: green;
+	color: $colour-black;
+	padding: $global-spacing;
+	&:hover,
+	&:focus {
+		background-color: darken(green, 10%);
+	}
+}
+
+@mixin button-arrow {
+	color: $colour-red;
+	position: relative;
+	&:before {
+		content: '';
+		height: 0.1rem;
+		width: 100%;
+		left: 0;
+		right: 0;
+		top: 125%;
+		background-color: $colour-red;
+		transform: scaleX(0);
+		@include transition(0.25s $ease-default transform);
+		position: absolute;
+		transform-origin: left;
+	}
+	&:after {
+		content: '';
+		mask-image: url("data:image/svg+xml,%3Csvg id='e61c492e-81b7-4ca1-9452-9b4b4ab0cd93' data-name='Isolation Mode' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28.08 17.41'%3E%3Cdefs%3E%3Cstyle%3E.aae783c9-7931-4867-8b0b-8b79f81fa6bb%7Bfill:none;stroke:%23fff;stroke-miterlimit:10;stroke-width:2px;%7D%3C/style%3E%3C/defs%3E%3Cline class='aae783c9-7931-4867-8b0b-8b79f81fa6bb' y1='8.71' x2='26.67' y2='8.71'/%3E%3Cpolyline class='aae783c9-7931-4867-8b0b-8b79f81fa6bb' points='18.67 0.71 26.67 8.71 18.67 16.71'/%3E%3C/svg%3E");
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		background-color: $colour-red;
+		width: 1.5rem;
+		height: 1rem;
+		display: inline-block;
+		margin-left: 2rem;
+		transform: translateX(-0.3rem);
+		@include transition(0.25s $ease-default transform);
+	}
+	&-bold {
+		@include headline-h6;
+		@extend .btn--arrow;
+		font-family: $font__main;
+		&:after {
+			width: 2.6rem;
+			height: 1.6rem;
+			margin-left: 2rem;
+			transform: translateX(-0.5rem);
+		}
+		&:before {
+			height: 0.2rem;
+		}
+	}
+	&-lg {
+		@include headline-h5;
+		@extend .btn--arrow;
+		&:after {
+			width: 2.6rem;
+			height: 1.6rem;
+			margin-left: 2rem;
+			transform: translateX(-0.5rem);
+		}
+		&:before {
+			height: 0.2rem;
+		}
+	}
+	&:hover {
+		&:before {
+			transform: scaleX(1);
+			background-color: $colour-red;
+		}
+		&:after {
+			transform: translateX(0);
+		}
+	}
+}
+@mixin button-light {
+	color: $colour-white;
+	&:before {
+		background-color: $colour-white;
+	}
+	&:after {
+		background-color: $colour-white;
+	}
+	&:hover {
+		color: $colour-red;
+		&:after {
+			background-color: $colour-red;
+		}
+	}
+}
+
+@mixin button-close {
+	background-color: transparent;
+	border-width: 0;
+	cursor: pointer;
+	padding: 0;
+	position: absolute;
+	appearance: none;
+	svg {
+		pointer-events: none;
+		fill: $colour-red;
+	}
+	&:hover {
+		svg {
+			fill: $colour-black;
+		}
+	}
+}

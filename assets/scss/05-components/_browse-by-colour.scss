@@ -1,0 +1,12 @@
+.browse-by-colour {
+	&__headline {
+		margin-top: 0;
+	}
+	&__grid {
+		@include grid-settings;
+		@include grid-samples;
+		row-gap: $global-spacing !important;
+		padding-bottom: calc(#{$global-spacing} * 3);
+		border-bottom: 1px solid $colour-alt-gray;
+	}
+}

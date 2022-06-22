@@ -1,0 +1,130 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	padding: calc(#{$global-spacing}) 0;
+	border-bottom: 0.1rem solid transparent;
+	transition: $link-transition;
+	@include media-breakpoint-up(lg) {
+		padding: calc(#{$global-spacing} * 2) 0;
+	}
+	nav#header a {
+		transition: $link-transition;
+	}
+	body.header--active &,
+	body.search & {
+		background-color: $colour-grey;
+		border-color: $colour-alt-gray;
+		.header__branding svg {
+			path {
+				fill: $colour-black;
+			}
+		}
+		nav#header a {
+			color: $colour-black;
+			&:after {
+				background-color: $colour-black;
+			}
+		}
+		.header__samples {
+			color: $colour-black;
+		}
+	}
+	body.tax-carpet-colour &,
+	body.tax-lvtflooring-colour &,
+	body.page-id-211 &,
+	body.search & {
+		.header__branding svg {
+			path {
+				fill: $colour-black;
+			}
+		}
+		nav#header a {
+			color: $colour-black;
+			&:after {
+				background-color: $colour-black;
+			}
+		}
+		.header__samples {
+			color: $colour-black;
+			&:after {
+				background-color: $colour-black;
+			}
+		}
+	}
+}
+
+.header {
+	&--black {
+		.header__branding svg {
+			path {
+				fill: $colour-black;
+			}
+		}
+		.header__samples {
+			color: $colour-black;
+			&:after {
+				background-color: $colour-black;
+			}
+		}
+		nav#header a {
+			color: $colour-black;
+			&:after {
+				background-color: $colour-black;
+			}
+		}
+	}
+}
+
+.header__branding {
+	a {
+		display: flex;
+	}
+	svg {
+		width: 160px;
+		height: 55px;
+		path {
+			@include transition(0.25s linear fill);
+		}
+	}
+}
+.header__mobile-items {
+	@include flex-wrap();
+	justify-content: flex-end;
+}
+button.hamburger {
+	padding: 0;
+	margin-left: calc(#{$global-spacing});
+	display: flex;
+}
+.header__samples-mobile {
+	@include small-text;
+}
+
+.header__samples {
+	@include line-effect;
+	margin-left: calc(#{$global-spacing} * 2);
+	position: relative;
+	color: $colour-white;
+}
+.header__samples-count {
+	@include small-text;
+	&--desktop {
+		.header__samples-count-icon {
+			transform: translate3d(0, -15px, 0);
+		}
+	}
+}
+
+.header__samples-count-icon {
+	@include small-text;
+	background: $colour-red;
+	color: $colour-white;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+	box-shadow: $box-shadow;
+}

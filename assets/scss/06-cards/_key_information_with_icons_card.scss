@@ -1,0 +1,16 @@
+.key-information-with-icon-card {
+	text-align: center;
+	padding: 0 calc(#{$global-spacing} * 2);
+	margin-bottom: calc(#{$global-spacing} * 2);
+	@include media-breakpoint-up(md) {
+		text-align: left;
+	}
+	&__image {
+		width: 100px;
+		height: 100px;
+	}
+	&__content {
+		margin-bottom: 0;
+		color: $colour-dark-gray;
+	}
+}

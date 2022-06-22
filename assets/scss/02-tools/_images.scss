@@ -1,0 +1,20 @@
+@mixin image-hover-effect() {
+	&__image-wrap {
+		position: relative;
+	}
+	&__image {
+		width: 100%;
+		object-fit: cover;
+		transition: $link-transition;
+		height: auto;
+		&:first-of-type {
+			@include full-size-element;
+		}
+		&:hover {
+			cursor: pointer;
+			&:first-of-type {
+				opacity: 0;
+			}
+		}
+	}
+}

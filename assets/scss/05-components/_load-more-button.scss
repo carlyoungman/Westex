@@ -1,0 +1,36 @@
+.load-more-button {
+	&__button-wrap {
+		@include flex-full;
+		margin-top: calc(#{$global-spacing} * 4);
+		&.loading {
+			.load-more-button__button {
+				opacity: 0;
+			}
+			.load-more-button__loading-animation {
+				opacity: 1;
+			}
+		}
+		&.hide {
+			display: none;
+		}
+	}
+
+	&__button {
+		@include flex-full;
+	}
+	&__text {
+		@include headline-h6;
+		color: $colour-red;
+		margin-right: $global-spacing;
+	}
+	&__icon {
+		fill: $colour-red;
+	}
+	&:hover {
+		cursor: pointer;
+	}
+	&__loading-animation {
+		position: absolute;
+		opacity: 0;
+	}
+}

@@ -1,0 +1,29 @@
+@mixin block-spacing-margin($offset: 0) {
+	margin: calc(#{$global-spacing} * 4) 0 calc(#{$global-spacing} * 4);
+	@include media-breakpoint-up(lg) {
+		margin: calc(#{$global-spacing} * 8) 0 calc(#{$global-spacing} * 8);
+	}
+}
+@mixin block-spacing-margin-remove($offset: 0) {
+	margin: calc(-1.5rem * 4) 0 calc(-1.5rem * 4) 0;
+	@include media-breakpoint-up(lg) {
+		margin: calc(-1.5rem * 8) 0 calc(-1.5rem * 8) 0;
+	}
+}
+
+@mixin block-spacing-padding($offset: 0) {
+	padding: calc(#{$global-spacing} * 4) 0 calc(#{$global-spacing} * 4);
+	@include media-breakpoint-up(lg) {
+		padding: calc(#{$global-spacing} * 8) 0 calc(#{$global-spacing} * 8);
+	}
+}
+
+@mixin paragraph-spacing {
+	margin-top: calc(#{$global-spacing} * 1);
+	margin-bottom: calc(#{$global-spacing} * 2);
+}
+
+@mixin headline-spacing {
+	margin-top: calc(#{$global-spacing} * 1);
+	margin-bottom: calc(#{$global-spacing} * 2);
+}

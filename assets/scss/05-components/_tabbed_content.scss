@@ -1,0 +1,79 @@
+.tabbed_content {
+	text-align: center;
+	.container-fluid {
+		border-bottom: 1px solid $colour-alt-gray;
+		padding-bottom: calc(#{$global-spacing} * 4);
+		@include media-breakpoint-up(lg) {
+			padding-bottom: calc(#{$global-spacing} * 8);
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		text-align: left;
+	}
+	&__intro {
+		margin-bottom: calc(#{$global-spacing * 3});
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: calc(#{$global-spacing * 4});
+		}
+	}
+	&__headings {
+		margin-bottom: calc(#{$global-spacing * 2});
+	}
+	&__heading {
+		margin-bottom: calc(#{$global-spacing});
+		color: $colour-alt-gray;
+		border-bottom: 1px solid transparent;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		h4 {
+			display: inline-block;
+			margin: 0;
+		}
+		&--active {
+			h4 {
+				color: $colour-red;
+				border-bottom: 1px solid $colour-red;
+			}
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&__content-wrap {
+		display: none;
+		&--active {
+			display: block;
+		}
+	}
+	&__image {
+		max-height: 300px;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+	&__content {
+		@include paragraph-large;
+		margin: 0 auto;
+		padding: calc(#{$global-spacing} * 2) $global-spacing 0
+			calc(#{$global-spacing} * 2);
+		@include media-breakpoint-up(lg) {
+			max-width: $content-max-width;
+			padding: calc(#{$global-spacing} * 2) calc(#{$global-spacing} * 4);
+		}
+	}
+	&__icon-wrap {
+		background: $colour-another-gray;
+		width: 100px;
+		height: 100px;
+		padding: $global-spacing;
+		box-shadow: $box-shadow;
+		position: absolute;
+		top: calc(300px);
+		right: calc(100% - 15px);
+		img {
+			object-fit: contain;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+address {
+	@include paragraph-spacing;
+	@include base-settings;
+	display: flex;
+}

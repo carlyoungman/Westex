@@ -1,0 +1,14 @@
+.btn,
+button {
+	@include button-settings;
+	&.btn--default {
+		@include button-default;
+	}
+
+	&.btn--arrow {
+		@include button-arrow;
+	}
+	&.btn--light {
+		@include button-light;
+	}
+}

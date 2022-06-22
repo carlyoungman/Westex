@@ -1,0 +1,9 @@
+@mixin article-default-settings() {
+	max-width: $content-max-width;
+	:first-child {
+		margin-top: 0;
+	}
+	:last-child {
+		margin-bottom: 0;
+	}
+}

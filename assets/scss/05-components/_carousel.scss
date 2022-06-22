@@ -1,0 +1,58 @@
+.carousel {
+	outline: 0;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	.flickity-viewport {
+		overflow: visible;
+	}
+	&:hover {
+		cursor: none;
+	}
+}
+
+.carousel__button {
+	position: absolute;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 10rem;
+	top: 15rem;
+	background-color: $colour-black;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	outline: 0 !important;
+	border: 0;
+	pointer-events: all;
+	@include transition(0.5s $ease-default transform);
+	&:hover {
+		transform: scale(1.1);
+	}
+	&:after {
+		content: '';
+		height: 2.7rem;
+		width: 1.3rem;
+		background-color: $colour-white;
+		display: inline-block;
+		mask-image: url("data:image/svg+xml,%3Csvg id='b4570000-21df-4655-8fd9-b199b3a9e810' data-name='Isolation Mode' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8.06 14.71'%3E%3Cdefs%3E%3Cstyle%3E.b50151ac-aabc-4b09-8cff-75771b7d813a%7Bfill:none;stroke:%23fff;stroke-miterlimit:10;%7D%3C/style%3E%3C/defs%3E%3Cpolyline class='b50151ac-aabc-4b09-8cff-75771b7d813a' points='0.35 14.35 7.35 7.35 0.35 0.35'/%3E%3C/svg%3E");
+		mask-repeat: no-repeat;
+		mask-position: center;
+		mask-size: contain;
+		margin: 0 auto;
+	}
+}
+
+.carousel__buttons {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	pointer-events: none;
+	z-index: 2;
+	> .carousel__button {
+		pointer-events: all;
+	}
+}

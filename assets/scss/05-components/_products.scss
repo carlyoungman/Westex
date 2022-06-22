@@ -1,0 +1,53 @@
+.products {
+	&__filters {
+		border: 1px solid $colour-alt-gray;
+		margin-bottom: calc(#{$global-spacing} * 2);
+		@include media-breakpoint-up(lg) {
+			margin: 0;
+		}
+	}
+	&__grid {
+		@include grid-settings;
+		@include grid-products;
+	}
+	&--insert {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+	}
+	&__no-products {
+		max-width: $content-max-width;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: -4.5rem auto 6rem auto;
+		text-align: center;
+		padding: 0 calc(#{$global-spacing} * 2);
+	}
+	&__no-products-found {
+		grid-column: span 4;
+		display: none;
+		&.show {
+			display: block;
+		}
+		&--active {
+			display: block;
+		}
+	}
+}
+
+body.search {
+	.products {
+		&__grid {
+			@include media-breakpoint-up(xl) {
+				grid-template-columns: repeat(6, minmax(0, 1fr));
+			}
+		}
+		&__no-products-found {
+			grid-column: span 6;
+			text-align: center;
+			max-width: $content-max-width;
+			margin: 0 auto;
+		}
+	}
+}

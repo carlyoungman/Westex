@@ -1,0 +1,44 @@
+article:not(.modal-sample) {
+	ul,
+	ol {
+		@include list-reset;
+		li {
+			position: relative;
+			margin-bottom: $global-spacing;
+			padding-left: calc(#{$global-spacing} * 2);
+			display: flex;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+			&:before {
+				content: '';
+				background: $colour-dark-gray;
+				display: block;
+				width: 10px;
+				height: 10px;
+				margin-right: $global-spacing;
+				border-radius: 100%;
+				position: absolute;
+				top: 13px;
+				left: 0;
+			}
+		}
+	}
+
+	ol {
+		list-style: none;
+		@for $i from 1 through 30 {
+			li:nth-child(#{$i}) {
+				&:before {
+					content: '##{$i}';
+				}
+			}
+		}
+	}
+
+	li > ul,
+	li > ol {
+		margin-bottom: 0;
+		margin-left: $global-spacing;
+	}
+}

@@ -1,0 +1,23 @@
+.offset-content-and-images {
+	&__title {
+		margin: 0 0 calc(#{$global-spacing} * 6) 0;
+	}
+	&__image {
+		max-width: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	.col-lg-5:first-child {
+		img {
+			margin-left: calc(100% / 6);
+		}
+	}
+	.col-lg-5:last-child {
+		img {
+			margin: 0 auto calc(#{$global-spacing} * 4) auto;
+		}
+	}
+	&__content-wrap {
+		margin-top: 0;
+	}
+}

@@ -1,0 +1,208 @@
+.sample-draw {
+	@include carousel-settings;
+	@include samples_form;
+	position: fixed;
+	z-index: 100;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	background-color: $colour-grey;
+	box-shadow: $box-shadow;
+	height: 100vh;
+	width: 100vw;
+	transform: translate3d(100%, 0, 0);
+	transition: $global-transition;
+	@include media-breakpoint-up(sm) {
+		left: unset;
+		width: 80vw;
+	}
+	@include media-breakpoint-up(lg) {
+		width: 60vw;
+	}
+	@include media-breakpoint-up(xl) {
+		width: 55vw;
+	}
+	@media (min-width: 1400px) {
+		width: 35vw;
+	}
+
+	&__inner {
+		@include sample-scroll-bar-settings;
+		position: relative;
+		padding: calc(#{$global-spacing} * 2) $global-spacing;
+		height: 100%;
+		max-height: calc(100vh - 60px);
+		overflow-y: auto;
+		@include media-breakpoint-up(md) {
+			padding: calc(#{$global-spacing} * 3);
+		}
+		@include media-breakpoint-up(xl) {
+			padding: calc(#{$global-spacing} * 3) calc(#{$global-spacing} * 4);
+		}
+	}
+	&__close-icon {
+		right: 0;
+		top: 0;
+	}
+	&__progress {
+		@include flex-wrap;
+		justify-content: space-between;
+		width: 100%;
+		li:nth-of-type(6) {
+			display: none;
+		}
+		&--step-delivery {
+			li:nth-child(3) {
+				color: $colour-red;
+			}
+		}
+		&--step-confirmation {
+			li:nth-child(5) {
+				color: $colour-red;
+			}
+		}
+	}
+	&__progress-step {
+		@include flex-wrap;
+		@include small-text;
+		&:first-of-type {
+			color: $colour-red;
+		}
+	}
+	&__line {
+		height: 1px;
+		width: 2vw;
+		background: $colour-black;
+		display: block;
+		margin: 0 calc(#{$global-spacing} / 2);
+	}
+
+	&__progress-close {
+		@include flex-wrap;
+	}
+	&__close-icon {
+		position: relative;
+		margin-left: calc(#{$global-spacing} * 3);
+	}
+	&__headline {
+		margin-bottom: 0;
+	}
+	&__intro {
+		color: $colour-dark-gray;
+	}
+	&__continue,
+	&__submit,
+	&__close {
+		@include button-settings;
+		@include button-action;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		&--disabled {
+			pointer-events: none;
+			opacity: 0.6;
+		}
+	}
+	&__submit,
+	&__close {
+		display: none;
+		&--disabled {
+			pointer-events: none;
+			opacity: 0.6;
+		}
+		&--show {
+			display: block;
+			z-index: 1;
+		}
+	}
+	&__close {
+		background: $colour-alt-gray;
+		color: $colour-black;
+		&:hover,
+		&:focus {
+			background-color: darken($colour-alt-gray, 10%);
+		}
+	}
+	&__continue-icon,
+	&__submit-icon {
+		fill: $colour-white;
+		margin-left: $global-spacing;
+	}
+	&__continue-icon {
+		@include rotate(-90deg);
+	}
+	.add-sample-card:last-of-type {
+		display: none;
+	}
+	&__controls {
+		display: none;
+	}
+	&__back {
+		@include flex-wrap;
+		@include small-text;
+		display: inline-flex;
+		color: $colour-dark-gray;
+		padding: $global-spacing;
+		margin-top: $global-spacing;
+		&:hover {
+			cursor: pointer;
+			color: $colour-red;
+		}
+	}
+	&__back-icon {
+		@include rotate(90deg);
+		margin-right: $global-spacing;
+	}
+	&__label {
+		@include small-text;
+		color: $colour-dark-gray;
+	}
+	&__address,
+	&__email {
+		background: $colour-white;
+		padding: $global-spacing calc(#{$global-spacing} * 2);
+		margin: 0 0 $global-spacing 0;
+	}
+	&__confirmation-wrap {
+		.add-sample-card {
+			display: none;
+		}
+		.sample-card__close {
+			display: none;
+		}
+		.sample-card {
+			row-gap: $global-spacing;
+			grid-template-columns: 60px 1fr;
+			pointer-events: none;
+		}
+		.sample-card__image {
+			height: 60px !important;
+			object-fit: scale-down;
+			width: 60px !important;
+		}
+		.sample-card__content-wrap {
+			height: 100%;
+		}
+		.sample-card__title {
+			@include base-settings;
+			line-height: 1rem;
+		}
+	}
+	.wpcf7-submit,
+	.wpcf7-response-output,
+	span.wpcf7-spinner {
+		display: none !important;
+	}
+	&--open {
+		transform: translate3d(0, 0, 0);
+	}
+	&__carousel-slide {
+		opacity: 0;
+		transition: $global-transition;
+	}
+	.glide__slide--active {
+		opacity: 1;
+	}
+}

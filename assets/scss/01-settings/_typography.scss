@@ -1,0 +1,49 @@
+@font-face {
+	font-family: 'StagSans-Book';
+	src: url('../../fonts/StagSans-Book.woff2') format('woff2'),
+		url('../../fonts/StagSans-Book.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'StagSans-Light';
+	src: url('../../fonts/StagSans-Light.woff2') format('woff2'),
+		url('../../fonts/StagSans-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'StagSans-Med';
+	src: url('../../fonts/StagSans-Medium.woff2') format('woff2'),
+		url('../../fonts/StagSans-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+// Fonts
+$font-stagsans-light: 'StagSans-Light', 'Helvetica', 'Arial', sans-serif;
+$font-stagsans-med: 'StagSans-Med', 'Helvetica', 'Arial', sans-serif;
+$font-stagsans-book: 'StagSans-Book', 'Helvetica', 'Arial', sans-serif;
+
+$font__main: $font-stagsans-light;
+$font__headline: $font-stagsans-light;
+
+$font__code: monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+$font__pre: 'Courier 10 Pitch', courier, monospace;
+
+//Font sizes
+$font__reset: 62.5%;
+$font__base-size: 1.8rem;
+
+//Line heights
+$font__base-line-height: 3.5rem;
+
+//Font weights
+$font__base-font-weight: 300;
+$font__sub-font-weight: 500;
+$font__headline-font-weight: 300;

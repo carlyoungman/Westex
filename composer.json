@@ -1,0 +1,44 @@
+{
+  "name": "westex/theme-boilerplate",
+  "type": "wordpress-theme",
+  "description": "Westex Boilerplate Theme",
+  "keywords": [
+    "WordPress",
+    "Themes"
+  ],
+  "require": {
+    "php": ">=7.4",
+    "johnbillion/extended-cpts": "5.0.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "ED_BOILERPLATE_THEME\\": "./app"
+    }
+  },
+  "minimum-stability": "dev",
+  "require-dev": {
+    "automattic/vipwpcs": "^2.2",
+    "roave/security-advisories": "dev-latest",
+    "squizlabs/php_codesniffer": "3.*",
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "phpcompatibility/phpcompatibility-wp": "*",
+    "wp-coding-standards/wpcs": "*",
+    "phpunit/phpunit": "^9",
+    "phpstan/phpstan": "^1.0",
+    "szepeviktor/phpstan-wordpress": "^1.0",
+    "phpstan/extension-installer": "^1.1"
+  },
+  "scripts": {
+    "lint": "./vendor/bin/phpcs .",
+    "lint-fix": "./vendor/bin/phpcbf .",
+    "lint:phpcompat": "phpcs -ps --colors --report-width=80 --standard=phpcompat.xml .",
+    "make-pot": "wp i18n make-pot . ./languages/theme.pot",
+    "test:unit": "./vendor/bin/phpunit"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true
+    }
+  }
+}

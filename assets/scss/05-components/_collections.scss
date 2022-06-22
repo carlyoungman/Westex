@@ -1,0 +1,19 @@
+.collections {
+	position: relative;
+	&__headline {
+		margin-top: 0;
+	}
+	&__background {
+		@include block-spacing-margin-remove;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 125vh;
+		background: $colour-grey;
+	}
+	&__grid {
+		@include grid-settings;
+		@include grid-collections;
+	}
+}

@@ -1,0 +1,15 @@
+.image-with-content-card {
+	&__image {
+		width: 100%;
+		object-fit: cover;
+	}
+	&__content-wrap {
+		max-width: $address-max-width;
+	}
+	&__content {
+		color: $colour-dark-gray;
+	}
+	.btn {
+		@include button-arrow;
+	}
+}

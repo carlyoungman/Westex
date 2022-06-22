@@ -1,0 +1,124 @@
+.modal-sample {
+	@include grid-settings;
+	@include image-hover-effect;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	@include media-breakpoint-up(md) {
+		grid-template-columns: 25% 65% 1fr;
+		row-gap: ($global-spacing * 3);
+		column-gap: ($global-spacing * 3);
+	}
+	&__headline {
+		margin: 0;
+	}
+	&__collection {
+		margin-top: 0;
+		color: $colour-dark-gray;
+	}
+	&__image-wrap {
+		margin-bottom: $global-spacing;
+	}
+	&__options {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+	&__option {
+		@include small-text;
+		@include flex-wrap;
+		color: $colour-red;
+		font-weight: $font__sub-font-weight;
+		position: relative;
+		border-bottom: 1px solid $colour-alt-gray;
+		padding: calc(#{$global-spacing} / 2) $global-spacing;
+		&:last-of-type {
+			border-bottom: none;
+		}
+		&:hover {
+			cursor: pointer;
+			background: $colour-grey;
+			.icon {
+				right: calc(#{$global-spacing} / 2);
+			}
+		}
+		&--disable {
+			background: $colour-red;
+			color: $colour-black;
+			pointer-events: none;
+			font-weight: normal;
+			a {
+				font-weight: normal;
+				color: $colour-white;
+			}
+		}
+		&--added {
+			background: $colour-red;
+			color: $colour-white;
+			font-weight: normal;
+			pointer-events: none;
+			a {
+				opacity: 0;
+				pointer-events: none;
+				font-weight: normal;
+			}
+			span {
+				opacity: 1;
+				font-weight: normal;
+			}
+		}
+	}
+	&__option-link {
+		@include flex-wrap;
+		width: 100%;
+		font-weight: bold;
+		&--added {
+			position: absolute;
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	&__option-arrow {
+		@include rotate(-90deg);
+		transition: $link-transition;
+		position: absolute;
+		right: $global-spacing;
+		fill: $colour-red;
+	}
+	&__section-headline {
+		&:after {
+			margin-top: $global-spacing;
+			display: block;
+			width: 5rem;
+			height: 1px;
+			content: '';
+			background: $colour-alt-gray;
+		}
+	}
+
+	&__specification {
+		display: grid;
+		@include media-breakpoint-up(lg) {
+			grid-template-columns: 30% 1fr;
+		}
+	}
+	&__specification-key {
+		text-transform: capitalize;
+		margin-right: $global-spacing;
+	}
+	&__specification-value {
+		color: $colour-dark-gray;
+	}
+	&__features {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		@include media-breakpoint-up(lg) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+	&__feature {
+		display: flex;
+		margin-bottom: calc(#{$global-spacing} / 2);
+	}
+	&__feature-icon {
+		fill: $colour-red;
+		margin-right: $global-spacing;
+	}
+}
