@@ -6,6 +6,7 @@ require('./components/featured-carousel');
 // require('./components/find-retailer');
 require('./components/find-retailer-new');
 require('./components/forms');
+require('./components/key-information-with-icons');
 require('./components/navigation');
 require('./components/products');
 require('./components/samples');

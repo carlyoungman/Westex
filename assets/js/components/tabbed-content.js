@@ -1,4 +1,4 @@
-class Products {
+class tabbedContent {
 	constructor(sector) {
 		const rootEl = sector;
 		const tabs = rootEl.querySelectorAll('ul.tabbed_content__headings li');
@@ -34,7 +34,7 @@ class Handler {
 		this.sector = sector;
 		this.sectorClass = sectorClass;
 
-		new Products(this.sector);
+		new tabbedContent(this.sector);
 	}
 }
 

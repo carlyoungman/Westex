@@ -48,9 +48,11 @@ $content = $key_info['content'] ?: get_sub_field('content') ?: '';
                         'template_parts/cards/key_information_with_icon_card', null,
                         [
                             'data' => [
-                                'icon' =>  $key['icon'],
-                                'title' => $key['title'],
-                                'content' => $key['content'],
+                                'icon'              =>  $key['top_level']['icon'],
+                                'title'             => $key['top_level']['title'],
+                                'content'           => $key['top_level']['content'],
+                                'read_more_check'   => $key['read_more_check'],
+                                'read_more'         => $key['read_more'],
                             ],
                         ]
                     ) ?>
@@ -62,3 +64,52 @@ $content = $key_info['content'] ?: get_sub_field('content') ?: '';
         </div>
     <?php  endif; ?>
 </section>
+
+<?php if(!empty($key_info )) :  ?>
+<section class="<?php echo esc_attr($base) ?>__read-more">
+    <div class="container-fluid container--max container-fluid--read-more">
+        <div class="row">
+            <div class="col">
+                <ul class="<?php echo esc_attr($base) ?>__read-more-list">
+                    <?php foreach( $key_info as $key ): ?>
+                        <?php if(!empty($key['read_more'] && true === $key['read_more_check'])): ?>
+                                <li class="<?php echo esc_attr($base) ?>__read-more-item">
+                                    <svg class="<?php echo esc_attr($base) ?>__read-more-item-close icon icon--s">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use>
+                                    </svg>
+                                    <?php if(!empty($key['read_more']['introduction'])): ?>
+                                        <p class="<?php echo esc_attr($base) ?>__read-more-item-introduction"><?php echo esc_html($key['read_more']['introduction']); ?></p>
+                                    <?php endif; ?>
+                                    <?php if(!empty($key['read_more']['key_points'])): ?>
+                                        <ul class="<?php echo esc_attr($base) ?>__read-more-item_dropdown">
+                                            <?php
+                                            foreach( $key['read_more']['key_points'] as $key_point): ?>
+                                                <li class="<?php echo esc_attr($base) ?>__read-more-item_dropdown-item">
+                                                    <?php
+                                                    if(!empty($key_point['headline'])): ?>
+                                                        <p class="<?php echo esc_attr($base) ?>__read-more-item-headline">
+                                                            <?php echo esc_html($key_point['headline']) ?>
+                                                            <svg class="<?php echo esc_attr($base) ?>__read-more-item-icon icon icon--s">
+                                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-down"></use>
+                                                            </svg>
+                                                        </p>
+                                                    <?php endif;
+                                                    if(!empty($key_point['dropdown_content'])): ?>
+                                                        <div class="<?php echo esc_attr($base) ?>__read-more-item-dropdown">
+                                                            <?php echo wp_kses_post($key_point['dropdown_content']) ?>
+                                                        </div>
+                                                    <?php endif;
+                                                    ?>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<?php  endif; ?>

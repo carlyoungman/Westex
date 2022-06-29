@@ -13,4 +13,31 @@
 		margin-bottom: 0;
 		color: $colour-dark-gray;
 	}
+	&__read-more {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin-top: $global-spacing;
+		&__text {
+			margin: 0 $global-spacing 0 0;
+		}
+		&:hover {
+			color: $colour-red;
+			cursor: pointer;
+			svg {
+				fill: $colour-red;
+			}
+		}
+		&--active {
+			color: $colour-red;
+			svg {
+				fill: $colour-red;
+				transform: rotate(180deg);
+			}
+		}
+	}
+	&--disabled {
+		pointer-events: none;
+		opacity: 0.6;
+	}
 }
