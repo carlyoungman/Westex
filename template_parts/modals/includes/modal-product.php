@@ -24,6 +24,7 @@ $specifications = get_field('specifications', 'term_' . $collection->term_id) ?:
 $features = get_field('features', 'term_' . $collection->term_id) ?: [];
 $button   = $args['data']['button'] ?: false;
 $buttons  = $args['data']['buttons'] ?: false;
+$quality = get_the_terms(get_the_ID(), 'carpet-quality');
 ?>
 <article class="<?php echo esc_attr($base); ?>">
         <div>
@@ -46,11 +47,31 @@ $buttons  = $args['data']['buttons'] ?: false;
                             </a>
                         </li>
                     <?php else: ?>
-                        <li class="<?php echo esc_attr($base); ?>__option">
-                            <a class="<?php echo esc_attr($base); ?>__option-link" href="#" id="request-a-sample" data-id="<?php the_id(); ?>">
-                                <?php echo esc_html( __( 'Request a sample', 'westex' ) ); ?>
-                                <svg class="<?php echo esc_attr($base); ?>__option-arrow icon icon--s"><use xlink:href="#icon-full-arrow-down"></use></svg>
-                            </a>
+                        <li class="<?php echo esc_attr($base); ?>__option <?php if(!empty($quality )): echo esc_attr($base) . '__option--quality-flag' ; endif; ?>">
+                            <?php
+                               if(!empty($quality)): ?>
+                                <div class="<?php echo esc_attr($base); ?>__quality">
+                                    <label for="<?php echo esc_attr($base); ?>__quality-select">
+                                        <?php echo esc_html( __( 'Request a sample', 'westex' ) ); ?>
+                                    </label>
+                                    <select class="<?php echo esc_attr($base); ?>__quality-select" name="<?php echo esc_attr($base); ?>__quality-select" id="<?php echo esc_attr($base); ?>__quality-select" data-id="<?php the_id(); ?>">
+                                        <option value="">--- Choose a quality ---</option>
+                                        <?php
+                                        foreach ($quality as $q):
+                                            echo '<option value="' . $q->name .'">' . $q->name . '</option>';
+                                        endforeach;
+                                        ?>
+                                    </select>
+                                </div>
+                             <?php
+                               else: ?>
+                                   <a class="<?php echo esc_attr($base); ?>__option-link" href="#" id="request-a-sample" data-id="<?php the_id(); ?>">
+                                       <?php echo esc_html( __( 'Request a sample', 'westex' ) ); ?>
+                                       <svg class="<?php echo esc_attr($base); ?>__option-arrow icon icon--s"><use xlink:href="#icon-full-arrow-down"></use></svg>
+                                   </a>
+
+                                 <?php  endif;
+                            ?>
                             <span class="<?php echo esc_attr($base); ?>__option-link <?php echo esc_attr($base); ?>__option-link--added">
                                  <?php echo esc_html( __( 'Sample added!', 'westex' ) ); ?>
                             </span>

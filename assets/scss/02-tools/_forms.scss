@@ -116,10 +116,13 @@
 			position: absolute;
 			padding: $global-spacing;
 			transition: $global-transition;
+			background: $colour-grey;
+			z-index: 1;
 		}
 
 		input,
-		textarea {
+		textarea,
+		select {
 			@include full-size-element;
 			padding: $global-spacing;
 			border: 0;
@@ -139,6 +142,9 @@
 					cursor: pointer;
 				}
 			}
+		}
+		select {
+			width: calc(100% - #{$global-spacing});
 		}
 	}
 }

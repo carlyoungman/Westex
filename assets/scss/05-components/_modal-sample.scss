@@ -64,6 +64,27 @@
 				font-weight: normal;
 			}
 		}
+		&--quality-flag {
+			.modal-sample__option--added {
+				background: unset;
+			}
+		}
+	}
+	&__quality {
+		label {
+			@include flex-wrap;
+			width: 100%;
+			font-weight: bold;
+			color: $colour-red;
+		}
+	}
+	&__quality-select {
+		height: 40px;
+		width: 120%;
+		background: none;
+		border: none;
+		option {
+		}
 	}
 	&__option-link {
 		@include flex-wrap;

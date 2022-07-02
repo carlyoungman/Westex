@@ -190,8 +190,23 @@
                         },
                         {
                             "key": "field_61febdfa9fd34",
-                            "label": "",
+                            "label": "Main link",
                             "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_62c0cf05e276e",
+                            "label": "Secondary link",
+                            "name": "secondary_link",
                             "type": "link",
                             "instructions": "",
                             "required": 0,
@@ -643,6 +658,13 @@
                 "operator": "==",
                 "value": "lvtflooring-collection"
             }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "carpet-colour"
+            }
         ]
     ],
     "menu_order": 0,
@@ -654,5 +676,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644535013
+    "modified": 1656803116
 }

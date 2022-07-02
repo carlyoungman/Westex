@@ -22,4 +22,8 @@
 	&:hover {
 		color: $colour-red;
 	}
+	&__quality {
+		color: $colour-dark-gray;
+		margin: 0 0 0 $global-spacing;
+	}
 }

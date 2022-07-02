@@ -45,6 +45,28 @@ add_action(
                 'plural'   => 'Collections',
             ]
         );
+
+    // Carpet Gualities
+    register_extended_taxonomy(
+        'carpet-quality', 'carpet', [
+        'rewrite' => array('slug' => 'carpets/quality'),
+        'admin_cols' => [
+            'updated' => [
+                'title_cb'    => function () {
+                    return '<em>Last</em> Updated';
+                },
+                'meta_key'    => 'updated_date',
+                'date_format' => 'd/m/Y'
+            ],
+        ],
+    ],
+        [
+            'singular' => 'Guality',
+            'plural'   => 'Gualities',
+        ]
+    );
+
+
         // LVT flooring colour
         register_extended_taxonomy(
             'lvtflooring-colour', 'lvtflooring', [
@@ -84,8 +106,29 @@ add_action(
             'plural'   => 'Collections',
             ]
         );
+
+    // LVP Flooring Gualities
+    register_extended_taxonomy(
+        'lvtflooring-quality', 'lvtflooring', [
+        'rewrite' => array('slug' => 'lvtflooring/quality'),
+        'admin_cols' => [
+            'updated' => [
+                'title_cb'    => function () {
+                    return '<em>Last</em> Updated';
+                },
+                'meta_key'    => 'updated_date',
+                'date_format' => 'd/m/Y'
+            ],
+        ],
+    ],
+        [
+            'singular' => 'Guality',
+            'plural'   => 'Gualities',
+        ]
+    );
     }
 );
+
 
 add_action(
     'admin_head', function () {

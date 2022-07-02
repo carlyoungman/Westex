@@ -10,8 +10,9 @@ import Glide from '@glidejs/glide';
 export default function createSlide(selector, config) {
 	if (document.querySelector(selector) instanceof HTMLElement) {
 		const glide = new Glide(selector, config);
+		glide.mount();
 		setTimeout(function () {
-			glide.mount();
+			glide.update();
 		}, 1000);
 
 		// Triggers a window resize to insure the slider has to correct widths

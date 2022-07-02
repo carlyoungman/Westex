@@ -156,23 +156,44 @@ add_action( 'wp_ajax_build_modal',  'build_modal_ajax_handler' );
 function get_samples_ajax_handler() {
     check_nonce($_POST['nonce']);
     $sample_count = 0;
-    if ( ! empty( $_POST['samples']) ){
-        $args = [
-            'post_status'    => 'publish',
-            'order'          => 'DESC',
-            'post_type'      => ['carpet', 'lvtflooring'],
-            'posts_per_page' => 5,
-            'post__in' =>  explode(",", $_POST['samples'])
-        ];
-        $post = new \WP_Query( $args );
-        if ($post->have_posts() ) {
-            while ( $post->have_posts() ) {
-                $post->the_post();
-                get_template_part( 'template_parts/cards/sample-card' );
-                   $sample_count++;
+    $samples = json_decode(
+        stripslashes( sanitize_text_field( $_POST['samples'] ) ),
+        true,
+        512,
+        JSON_THROW_ON_ERROR
+    );
+    if ( ! empty( $samples) ){
+        $result[] = (string)$samples;
+        if(is_array($samples)){
+            $result = [];
+            foreach ($samples as $abstract_detail) {
+                    $result[] = $abstract_detail['id'];
             }
-            wp_reset_postdata();
         }
+        global $post;
+        foreach ( $result as $post ) : setup_postdata( $post );
+            get_template_part( 'template_parts/cards/sample-card' );
+            $sample_count++;
+        endforeach;
+
+//              $args = [
+//                  'post_status'    => 'publish',
+//                  'order'          => 'DESC',
+//                  'post_type'      => ['carpet', 'lvtflooring'],
+//                  'posts_per_page' => 5,
+//                  'post__in' =>  $result
+//              ];
+//
+//        $post = new \WP_Query( $args );
+//        if ($post->have_posts() ) {
+//            while ( $post->have_posts() ) {
+//                $post->the_post();
+//                get_template_part( 'template_parts/cards/sample-card' );
+//                $sample_count++;
+//            }
+//            wp_reset_postdata();
+//        }
+
     }
     while ($sample_count < 5 && $_POST['single'] !== 'true'){
         get_template_part( 'template_parts/cards/add-sample-card' );

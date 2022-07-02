@@ -22,6 +22,7 @@ if(null === $collection){
     <div class="<?php echo esc_attr($base); ?>__content-wrap">
         <p class="<?php echo esc_attr($base); ?>__title"><?php the_title() ?></p>
         <p class="<?php echo esc_attr($base); ?>__collection"><?php echo esc_html($collection->name); ?></p>
+        <p class="<?php echo esc_attr($base); ?>__quality"></p>
     </div>
     <button type="button" class="<?php echo esc_attr( $base ); ?>__close">
         <svg class="<?php echo esc_attr( $base ); ?>__icon icon icon--s">

@@ -180,46 +180,17 @@ class Products {
 		document.addEventListener('click', function (e) {
 			if (e.target && e.target.id === 'request-a-sample') {
 				e.preventDefault();
-				updateSamples(e.target.getAttribute('data-id'));
-				/**
-				 * Remove one of the add sample cards. Not the first instance as that gets cloned
-				 */
-				document.querySelectorAll('a.add-sample-card')[1].remove();
+				AddSamplesProcess(e);
+			}
+		});
 
-				/**
-				 * This function updates the count in the header
-				 */
-				updateSampleCount();
-
-				/**
-				 * This function is responsible for displaying the samples within the draw
-				 */
-				getSamples(e.target.getAttribute('data-id'));
-
-				/**
-				 * Update the button text to show the sample has been added
-				 */
-				e.target.parentNode.classList.toggle(
-					'modal-sample__option--added'
-				);
-
-				//Close the module and opens the samples draw
-				setTimeout(function () {
-					const close = document.querySelector(
-						'button.modal-base__close'
-					);
-					const samples = document.querySelector(
-						'div.header__samples'
-					);
-
-					if (
-						close instanceof window.HTMLElement &&
-						samples instanceof window.HTMLElement
-					) {
-						close.click();
-						samples.click();
-					}
-				}, 1000);
+		/**
+		 * This functionality is responsible for updating the samples array using the quality select.
+		 */
+		document.addEventListener('change', function (e) {
+			if (e.target && e.target.id === 'modal-sample__quality-select') {
+				e.preventDefault();
+				AddSamplesProcess(e);
 			}
 		});
 
@@ -263,6 +234,49 @@ class Products {
 				}
 			});
 		};
+
+		function AddSamplesProcess(e) {
+			updateSamples(
+				e.target.getAttribute('data-id'),
+				e.target.value ?? ''
+			);
+
+			/**
+			 * Remove one of the add sample cards. Not the first instance as that gets cloned
+			 */
+			document.querySelectorAll('a.add-sample-card')[1].remove();
+
+			/**
+			 * This function updates the count in the header
+			 */
+			updateSampleCount();
+
+			/**
+			 * This function is responsible for displaying the samples within the draw
+			 */
+			getSamples(e.target.getAttribute('data-id'));
+
+			/**
+			 * Update the button text to show the sample has been added
+			 */
+			e.target.parentNode.classList.toggle('modal-sample__option--added');
+
+			//Close the module and opens the samples draw
+			setTimeout(function () {
+				const close = document.querySelector(
+					'button.modal-base__close'
+				);
+				const samples = document.querySelector('div.header__samples');
+
+				if (
+					close instanceof window.HTMLElement &&
+					samples instanceof window.HTMLElement
+				) {
+					close.click();
+					samples.click();
+				}
+			}, 1000);
+		}
 	}
 }
 

@@ -34,6 +34,10 @@ $images = $offset_content['images'] ?? get_sub_field('images') ?? [];
                         $content['link']['classes'] = 'btn--arrow btn--thin';
                         echo yr_button($content['link']);
                     } ?>
+                    <?php if ($content['secondary_link']) {
+                        $content['secondary_link']['classes'] = 'btn--arrow btn--thin';
+                        echo yr_button($content['secondary_link']);
+                    } ?>
                 </div>
             </div>
         </div>

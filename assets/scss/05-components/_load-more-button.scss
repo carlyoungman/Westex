@@ -1,7 +1,7 @@
 .load-more-button {
 	&__button-wrap {
 		@include flex-full;
-		margin-top: calc(#{$global-spacing} * 4);
+		margin-top: calc(#{$global-spacing} * 2);
 		&.loading {
 			.load-more-button__button {
 				opacity: 0;
@@ -17,6 +17,7 @@
 
 	&__button {
 		@include flex-full;
+		position: relative;
 	}
 	&__text {
 		@include headline-h6;
@@ -25,6 +26,8 @@
 	}
 	&__icon {
 		fill: $colour-red;
+		position: absolute;
+		right: -1.5rem;
 	}
 	&:hover {
 		cursor: pointer;

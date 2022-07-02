@@ -1,4 +1,5 @@
 import clickModal from '../utils/click-modal';
+import updateDisplayNumber from '../utils/update-display-number';
 export default function processResults(data, settings) {
 	// Adds additional dynamic class that is used for animation
 	const regexCard = new RegExp(`class="${settings.card}"`, 'g');
@@ -19,6 +20,8 @@ export default function processResults(data, settings) {
 			'transition-delay:' + '0.1' * i + 's'
 		);
 	}
+	//Update the load more display number;
+	updateDisplayNumber(settings.rootEl, settings.page);
 	//Animate the cards by removing the dynamic class that we just added
 	setTimeout(function () {
 		Array.from(

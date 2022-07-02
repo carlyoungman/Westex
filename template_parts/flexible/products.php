@@ -62,6 +62,13 @@ endif;
                     <span class="insert <?php echo esc_attr( $base ); ?>--insert"></span>
                 </div>
                 <?php
+                get_template_part('template_parts/display-number',
+                    null,
+                    [
+                        'data' => [
+                            'query' => $query,
+                            ],
+                ]);
                 get_template_part(
                     'template_parts/load-more-button',
                     null,

@@ -21,6 +21,9 @@ add_action(
                 'carpet_collection' => [
                     'taxonomy' => 'carpet-collection'
                 ],
+                'carpet_quality' => [
+                    'taxonomy' => 'carpet-quality'
+                ],
             ],
             'admin_filters' => [
                 'carpet_colour' => [
@@ -28,6 +31,9 @@ add_action(
                 ],
                 'carpet_collection' => [
                     'taxonomy' => 'carpet-collection'
+                ],
+                'carpet_quality' => [
+                    'taxonomy' => 'carpet-quality'
                 ],
             ],
             ]
@@ -49,6 +55,9 @@ add_action(
                     'lvtflooring_collection' => [
                         'taxonomy' => 'lvtflooring-collection'
                     ],
+                    'lvtflooring_quality' => [
+                        'taxonomy' => 'lvtflooring-quality'
+                    ],
                 ],
                 'admin_filters' => [
                     'lvtflooring_colour' => [
@@ -56,6 +65,9 @@ add_action(
                     ],
                     'lvtflooring_collection' => [
                         'taxonomy' => 'lvtflooring-collection'
+                    ],
+                    'lvtflooring_quality' => [
+                        'taxonomy' => 'lvtflooring-quality'
                     ],
                 ],
             ],

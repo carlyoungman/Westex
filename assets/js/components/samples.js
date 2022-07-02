@@ -51,7 +51,10 @@ class Samples {
 			if (e.target && e.target.classList.value === 'sample-card__close') {
 				const $card = e.target.parentNode;
 				// Remove from local storage
-				updateSamples($card.getAttribute('data-id'));
+				updateSamples(
+					$card.getAttribute('data-id'),
+					$card.getAttribute('data-quality') ?? ''
+				);
 				// Deleting animation
 				deleteSample($card, transition);
 				// Update count

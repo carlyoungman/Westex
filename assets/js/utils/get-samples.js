@@ -4,7 +4,7 @@ export default function getSamples(sampleID) {
 		nonce: ajax_params.ajaxNonce,
 		insert: document.querySelectorAll('div.sample-draw__display'),
 		action: 'get_samples',
-		samples: JSON.parse(window.localStorage.getItem('samples')),
+		samples: window.localStorage.getItem('samples'),
 		single: false,
 	};
 
@@ -34,6 +34,21 @@ export default function getSamples(sampleID) {
 			} else {
 				console.log('No data returned');
 			}
+		})
+		.finally(() => {
+			const samples = JSON.parse(window.localStorage.getItem('samples'));
+			document.querySelectorAll('div.sample-card').forEach((card, i) => {
+				if (card.dataset.id.length) {
+					if (
+						samples[i].quality.length &&
+						card.dataset.id === samples[i].id
+					) {
+						card.querySelector('p.sample-card__quality').innerHTML =
+							'<span>|</span>' + samples[i].quality;
+						card.dataset.quality = samples[i].quality;
+					}
+				}
+			});
 		})
 		.catch((error) => {
 			console.log(error);

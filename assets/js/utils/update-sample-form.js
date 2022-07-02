@@ -21,10 +21,22 @@ export default function updateSampleForm() {
 		const collection = element.querySelector(
 			'p.sample-card__collection'
 		).textContent;
+		const quality =
+			element.querySelector('p.sample-card__quality').textContent ?? '';
 		const id = element.getAttribute('data-id');
 		input.setAttribute('type', 'hidden');
 		input.setAttribute('name', sams[i]);
-		input.setAttribute('value', title + ', ' + collection + ', ' + id);
+		input.setAttribute(
+			'value',
+			'Title: ' +
+				title +
+				', Collection: ' +
+				collection +
+				', ID: ' +
+				id +
+				', Quality:' +
+				quality
+		);
 		input.setAttribute('data-title', title);
 		input.setAttribute('data-collection', collection);
 		input.setAttribute('data-id', id);
